@@ -28,6 +28,10 @@ app.get('/asiat', (req, res) => {
     res.sendFile(path.join(__dirname, 'application/asiat.html'));
 });
 
+app.get('/0a694cc0-0d80-45ff-9732-cf97b91a3844.webp', (req, res) => {
+    res.sendFile(path.join(__dirname, 'application/0a694cc0-0d80-45ff-9732-cf97b91a3844.webp'));
+});
+
 app.use(express.json());
 
 // Yhdistä SQLite-tietokantaan

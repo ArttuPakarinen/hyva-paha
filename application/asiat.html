@@ -34,6 +34,14 @@
         // return `hsl(${hue}, 80%, 50%)`; // Adjust saturation and lightness as needed
       }
 
+
+      function getBackgroundPosition(luokitus) {
+        // Normalize luokitus to a percentage from 0 to 100
+        let percentage = ((luokitus + 1) / 2) * 100;
+        return percentage
+        // Update background position
+      }
+
       // Luo asynkroninen funktio, joka suorittaa GET-pyynnön sivun latautuessa
       async function fetchData() {
         try {
@@ -59,8 +67,14 @@
             // Create a div for each object
             const itemDiv = document.createElement('div');
             itemDiv.classList.add('item-div');
+            // itemDiv.classList.add('background-div');
+
+            // itemDiv.style.backgroundColor = getBackgroundColor(item.luokitus);
 
             itemDiv.style.backgroundColor = getBackgroundColor(item.luokitus);
+            // const percentage = getBackgroundPosition(item.luokitus)
+            // itemDiv.style.backgroundPosition = `${percentage}% 30%`;
+            // document.getElementById('background-div').style.backgroundPosition = `${percentage}% 0`;
 
             // // Create individual elements for each key-value pair
             const idDiv = document.createElement('div');

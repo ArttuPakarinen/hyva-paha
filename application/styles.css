@@ -68,4 +68,11 @@
   .item-div div {
     margin-bottom: 8px;
   }
+
+  .background-div {
+    width: 100%;
+    background-image: url('./0a694cc0-0d80-45ff-9732-cf97b91a3844.webp');
+    background-size: 400% auto; /* Adjust this based on the image width */
+    background-position: 0% 0; /* Initial background position */
+  }
   
