@@ -1,8 +1,7 @@
 const { sendPrompt } = require('./openai');
+const { SELITE_MAX_LENGTH } = require('./appConfig.js');
 const express = require('express');
 const { Sequelize, DataTypes } = require('sequelize');
-
-const SELITE_MAX_LENGTH = 256;
 
 // Luo Express-sovellus
 const app = express();
@@ -13,7 +12,7 @@ const path = require('path');
 app.use(bodyParser.json());
 
 // Palvelee index.html-tiedoston
-app.get('/index.js', (req, res) => {
+app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'application/index.html'));
 });
 
@@ -29,32 +28,7 @@ const sequelize = new Sequelize({
   storage: 'asiat.sqlite' // Tietokantatiedoston nimi
 });
 
-// Määrittele "Asiat"-taulu
-const Asiat = sequelize.define('Asiat', {
-  id: {
-    type: DataTypes.INTEGER,
-    autoIncrement: true,
-    primaryKey: true
-  },
-  asia: {
-    type: DataTypes.TEXT, // Määrättömän suuri tekstikenttä
-    allowNull: false
-  },
-  selite: {
-    type: DataTypes.STRING(SELITE_MAX_LENGTH), // Rajoitettu 250 merkkiin
-    allowNull: false
-  },
-  luokitus: {
-    type: DataTypes.INTEGER, // Luokitus -1 - 1
-    validate: {
-      min: -1,
-      max: 1
-    },
-    allowNull: false
-  }
-}, {
-    freezeTableName: true // Tämä estää monikollistamisen
-});
+const Asiat = require('./models/asiat')(sequelize, DataTypes); // Passing sequelize and DataTypes
 
 // Synkronoi tietokanta
 sequelize.sync()
@@ -91,7 +65,8 @@ app.post('/api/asiat', async (req, res) => {
   
       // Jos selite puuttuu, luodaan se OpenAI:n avulla
       if (!selite) {
-        const prompt = `Anna max. ${SELITE_MAX_LENGTH} merkin selite seuraavasta aiheesta: ${asia}`;
+        const prompt = `Selitä maximissaan ${SELITE_MAX_LENGTH} merkillä mikä seuraava asia on: "${asia}"`;
+        // const prompt = `Anna maximissaan ${SELITE_MAX_LENGTH} merkin pituinen selite seuraavasta aiheesta: "${asia}"`;
         try {
           const response = await sendPrompt(prompt);
           console.log("selite vastaus", response);

@@ -1,4 +1,5 @@
 'use strict';
+const { SELITE_MAX_LENGTH } = require('../appConfig.js');
 module.exports = (sequelize, DataTypes) => {
     const Asiat = sequelize.define('Asiat', {
         id: {
@@ -24,7 +25,6 @@ module.exports = (sequelize, DataTypes) => {
         }
       }, {
         freezeTableName: true, // Tämä estää monikollistamisen
-        timestamps: false
       });
 
   return Asiat;
