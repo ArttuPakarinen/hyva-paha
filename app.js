@@ -17,6 +17,10 @@ app.get('/index.js', (req, res) => {
   res.sendFile(path.join(__dirname, 'application/index.html'));
 });
 
+app.get('/asiat', (req, res) => {
+    res.sendFile(path.join(__dirname, 'application/asiat.html'));
+  });
+
 app.use(express.json());
 
 // Yhdistä SQLite-tietokantaan
@@ -61,7 +65,7 @@ sequelize.sync()
 
 // Luo uusi "Asia"
 // Luo uusi "Asia"
-app.post('/asiat', async (req, res) => {
+app.post('/api/asiat', async (req, res) => {
     try {
       let { asia, selite, luokitus } = req.body;
   
@@ -134,7 +138,7 @@ app.post('/asiat', async (req, res) => {
   });  
 
 // Hae kaikki "Asiat"
-app.get('/asiat', async (req, res) => {
+app.get('/api/asiat', async (req, res) => {
   try {
     const asiat = await Asiat.findAll();
     res.json(asiat);
@@ -144,7 +148,7 @@ app.get('/asiat', async (req, res) => {
 });
 
 // Hae yksittäinen "Asia" ID:llä
-app.get('/asiat/:id', async (req, res) => {
+app.get('/api/asiat/:id', async (req, res) => {
   try {
     const asia = await Asiat.findByPk(req.params.id);
     if (asia) {
@@ -158,7 +162,7 @@ app.get('/asiat/:id', async (req, res) => {
 });
 
 // Päivitä "Asia" ID:llä
-app.put('/asiat/:id', async (req, res) => {
+app.put('/api/asiat/:id', async (req, res) => {
   try {
     const { asia, selite, luokitus } = req.body;
     const [updated] = await Asiat.update({ asia, selite, luokitus }, {
@@ -176,7 +180,7 @@ app.put('/asiat/:id', async (req, res) => {
 });
 
 // Poista "Asia" ID:llä
-app.delete('/asiat/:id', async (req, res) => {
+app.delete('/api/asiat/:id', async (req, res) => {
   try {
     const deleted = await Asiat.destroy({
       where: { id: req.params.id }
