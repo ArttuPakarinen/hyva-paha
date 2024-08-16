@@ -18,14 +18,14 @@ async function sendPrompt(prompt) {
       }
     });
 
-    // Tulostetaan vastaus
+    // Palautetaan vastaus
     const message = response.data.choices[0].message.content;
-    console.log('Vastaus:', message);
+    return message;
   } catch (error) {
     console.error('Virhe API-kutsussa:', error.response ? error.response.data : error.message);
+    throw error;
   }
 }
 
-// Lähetä prompt
-const prompt = "Selitä lyhyesti, mikä on tekoäly.";
-sendPrompt(prompt);
+// Viedään funktio käytettäväksi muissa tiedostoissa
+module.exports = { sendPrompt };
