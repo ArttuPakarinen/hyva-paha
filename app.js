@@ -53,7 +53,7 @@ const Asiat = sequelize.define('Asiat', {
     allowNull: false
   }
 }, {
-  timestamps: false
+    freezeTableName: true // Tämä estää monikollistamisen
 });
 
 // Synkronoi tietokanta

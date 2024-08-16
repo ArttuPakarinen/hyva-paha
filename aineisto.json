@@ -1,0 +1,192 @@
+[
+    {
+        "asia": "lapsen raiskaus",
+        "selite": "Lapsen raiskaus on äärimmäisen paha teko. Se aiheuttaa syvää kärsimystä, vahingoittaa viattomuutta ja rikkoo moraalisia periaatteita.",
+        "luokitus": 1    
+    },
+    {
+        "asia": "naisen raiskaus",
+        "selite": "Naisen raiskaus on vakava ja julma rikos, joka loukkaa ihmisen oikeuksia ja aiheuttaa syvää henkistä ja fyysistä kärsimystä.",
+        "luokitus": 1
+    },
+    {
+        "asia": "miehen lyöminen",
+        "selite": "Miehen lyöminen, ilman oikeutusta kuten itsepuolustusta, on väkivaltainen teko, joka aiheuttaa vahinkoa ja on moraalisesti väärin.",
+        "luokitus": 1
+    },
+    {
+        "asia": "sotaan määräminen",
+        "selite": "Sotaan määräminen on monimutkainen asia. Se voi liittyä itsepuolustukseen tai aggressioon, mutta se aiheuttaa usein valtavaa kärsimystä ja tuhoa.",
+        "luokitus": 1
+    },
+    {
+        "asia": "varkaus",
+        "selite": "Varkaus on teko, jossa otetaan toisen omaisuutta ilman lupaa. Se loukkaa toisen oikeuksia ja on moraalisesti väärin.",
+        "luokitus": 1
+    },
+    {
+        "asia": "murha",
+        "selite": "Murha on tarkoituksellinen toisen ihmisen hengen riistäminen ja on yksi vakavimmista rikoksista ja moraalisista väärinkäytöksistä.",
+        "luokitus": 1
+    },
+    {
+        "asia": "lapsen lyöminen",
+        "selite": "Lapsen lyöminen on väkivaltainen teko, joka vahingoittaa lasta fyysisesti ja henkisesti. Se on moraalisesti väärin.",
+        "luokitus": 1
+    },
+    {
+        "asia": "lapsen vahingoittaminen",
+        "selite": "Lapsen vahingoittaminen on äärimmäisen väärin, sillä se aiheuttaa syvää fyysistä ja henkistä kärsimystä haavoittuvaiselle ja viattomalle olennolle.",
+        "luokitus": 1
+    },
+    {
+        "asia": "vamman aiheuttaminen",
+        "selite": "Vamman aiheuttaminen toiselle, varsinkin tahallisesti, on vahingollinen ja moraalisesti väärä teko, joka loukkaa toisen terveyttä ja hyvinvointia.",
+        "luokitus": 1
+    },
+    {
+        "asia": "orjien kaappaaminen",
+        "selite": "Orjien kaappaaminen on vakava rikos ihmisyyttä vastaan, loukaten ihmisoikeuksia ja vapautta. Se on äärimmäisen väärin ja moraalisesti tuomittavaa.",
+        "luokitus": 1
+    },
+    {
+        "asia": "suru maailman saastasta",
+        "selite": "Suru maailman saastasta on ymmärrettävä ja inhimillinen tunne, joka kumpuaa huolesta ympäristön ja tulevien sukupolvien hyvinvoinnista. Se osoittaa välittämistä ja tietoisuutta ongelmista.",
+        "luokitus": 1
+    },
+    {
+        "asia": "terveyden ylläpito",
+        "selite": "Terveyden ylläpito on positiivinen ja vastuullinen teko, joka edistää hyvinvointia ja elämänlaatua.",
+        "luokitus": 1
+    },
+    {
+        "asia": "Jumalan sana",
+        "selite": "Jumalan sana on monille pyhä ja ohjaava opetus, joka tarjoaa hengellistä voimaa, suuntaa ja moraalista ohjeistusta. Se nähdään hyvänä ja rakentavana monissa uskonnoissa.",
+        "luokitus": 1
+    },
+    {
+        "asia": "Rakkaus",
+        "selite": "Rakkaus on voimakas ja myönteinen tunne, joka yhdistää ihmisiä, tuo iloa ja edistää harmoniaa. Se on yksi elämän perustavanlaatuisista hyvistä asioista.",
+        "luokitus": 1
+    },
+    {
+        "asia": "Ilo",
+        "selite": "Ilo on positiivinen ja elämää rikastuttava tunne, joka tuo onnellisuutta ja keventää sydäntä.",
+        "luokitus": 1
+    },
+    {
+        "asia": "Taivaallinen ilo.",
+        "selite": "Taivaallinen ilo on syvällinen, henkinen ilo, joka kumpuaa jumalallisesta yhteydestä ja rauhasta. Se nähdään usein puhtaana ja kestävänä ilona.",
+        "luokitus": 1
+    },
+    {
+        "asia": "Leikkiminen",
+        "selite": "Leikkiminen on positiivinen ja vapauttava toiminta, joka edistää luovuutta, iloa ja yhteisöllisyyttä.",
+        "luokitus": 1
+    },
+    {
+        "asia": "Kaverin tönäisy hiekkalaatikolla.",
+        "selite": "Kaverin tönäisy hiekkalaatikolla voi olla vahingollinen teko, jos se aiheuttaa harmia tai loukkaa toista, vaikka se tapahtuisi leikissä.",
+        "luokitus": 1
+    },
+    {
+        "asia": "Autolla ajo",
+        "selite": "Autolla ajo on neutraali toiminta, joka voi olla sekä hyödyllistä että turvallista, mutta myös vaarallista tai haitallista riippuen tilanteesta ja ajotavasta.",
+        "luokitus": 0
+    },
+    {
+        "asia": "Kolarin ajo",
+        "selite": "Kolarin ajo on vaarallinen ja vahingollinen teko, joka voi aiheuttaa loukkaantumisia ja omaisuusvahinkoja.",
+        "luokitus": 1
+    },
+    {
+        "asia": "Vahinko",
+        "selite": "Vahinko on yleensä tahaton tapahtuma, joka voi aiheuttaa haittaa, mutta ilman tarkoitusta tehdä pahaa. Se on moraalisesti neutraali riippuen kontekstista.",
+        "luokitus": 0
+    },
+    {
+        "asia": "Vahingon aiheuttamat seuraamukset",
+        "selite": "Vahingon aiheuttamat seuraamukset voivat vaihdella suuresti tilanteen mukaan. Ne voivat olla negatiivisia, kuten loukkaantumiset tai aineelliset vahingot, mutta ne eivät ole moraalisesti väärin, jos teko oli tahaton.",
+        "luokitus": 0
+    },
+    {
+        "asia": "Aineelliset vahingot.",
+        "selite": "Aineelliset vahingot voivat olla taloudellisesti haitallisia ja aiheuttaa stressiä, mutta ne ovat korvattavissa eikä niillä ole välttämättä moraalista ulottuvuutta, ellei vahinkoa ole aiheutettu tahallisesti.",
+        "luokitus": 0
+    },
+    {
+        "asia": "Tahallinen aineellinen vahinko.",
+        "selite": "Tahallinen aineellinen vahinko on vahingonteko, joka aiheuttaa haittaa ja osoittaa piittaamattomuutta toisen omaisuutta kohtaan. Se on moraalisesti väärin.",
+        "luokitus": 1
+    },
+    {
+        "asia": "Tauti",
+        "selite": "Tauti on luonnollinen ilmiö, joka aiheuttaa kärsimystä ja terveysongelmia, mutta se ei ole moraalinen teko. Se on neutraali, koska se ei ole tahallinen tai hallittavissa oleva asia.",
+        "luokitus": 0
+    },
+    {
+        "asia": "Jumalan siunaus",
+        "selite": "Jumalan siunaus nähdään hyvänä ja myönteisenä lahjana, joka tuo suojelusta, rauhaa ja hyvyyttä elämään.",
+        "luokitus": 1
+    },
+    {
+        "asia": "Jumalan rakkaus",
+        "selite": "Jumalan rakkaus on täydellinen ja ehdoton rakkaus, joka tuo lohtua, toivoa ja johdatusta. Se on universaalisti hyvänä pidetty voima.",
+        "luokitus": 1
+    },
+    {
+        "asia": "Totuus",
+        "selite": "Totuus on arvokas ja tärkeä periaate, joka edistää oikeudenmukaisuutta, rehellisyyttä ja ymmärrystä.",
+        "luokitus": 1
+    },
+    {
+        "asia": "Valhe",
+        "selite": "Valhe on harhaanjohtava teko, joka rikkoo luottamusta ja voi aiheuttaa vahinkoa.",
+        "luokitus": 1
+    },
+    {
+        "asia": "Rikos",
+        "selite": "Rikos on teko, joka rikkoo lakia ja usein vahingoittaa muita ihmisiä tai yhteiskuntaa.",
+        "luokitus": 1
+    },
+    {
+        "asia": "Porno",
+        "selite": "Porno on monimutkainen aihe, johon liittyy erilaisia moraalisia ja sosiaalisia näkemyksiä. Sen vaikutus riippuu kontekstista, kuten käytöstä, tuotantotavoista ja siitä, miten se vaikuttaa yksilöihin ja yhteiskuntaan. Moraalinen arviointi voi vaihdella suuresti, joten luokitus voi olla neutraali",
+        "luokitus": 0
+    },
+    {
+        "asia": "Lapsi näkee pornoa",
+        "selite": "Lapsen altistuminen pornolle on vahingollista ja sopimatonta, sillä se voi vaikuttaa haitallisesti lapsen kehitykseen ja ymmärrykseen seksuaalisuudesta.",
+        "luokitus": 1
+    },
+    {
+        "asia": "Julkisesti näkyvä seksi",
+        "selite": "Julkisesti näkyvä seksi on yleensä sopimatonta ja voi aiheuttaa epämukavuutta tai häiriötä muille. Se rikkoo yleisesti hyväksyttyjä sosiaalisia normeja.",
+        "luokitus": 1
+    },
+    {
+        "asia": "Yksityinen seksi",
+        "selite": "Yksityinen seksi kahden suostumuksellisen aikuisen välillä on luonnollinen ja intiimi teko, joka on osa normaalia ihmiselämää.",
+        "luokitus": 1
+    },
+    {
+        "asia": "Masturboiminen",
+        "selite": "Masturboiminen on henkilökohtainen ja yksityinen toiminta, johon liittyy monia näkökulmia, kuten terveys, moraali ja kulttuuri. Se on monille luonnollinen osa seksuaalisuutta, ja sen moraalinen arviointi vaihtelee uskomusten ja arvojen mukaan. Luokitus voi vaihdella, mutta yleisesti neutraali",
+        "luokitus": 0
+    },
+    {
+        "asia": "Terveenä pysyminen",
+        "selite": "Terveenä pysyminen on positiivinen ja vastuullinen tavoite, joka edistää hyvinvointia ja elämänlaatua.",
+        "luokitus": 1
+    },
+    {
+        "asia": "Suunnitelma",
+        "selite": "Suunnitelma on neutraali työkalu, jolla pyritään järjestämään asioita ja saavuttamaan tavoitteita. Sen moraalinen arvo riippuu suunnitelman tarkoituksesta ja seurauksista.",
+        "luokitus": 0
+    },
+    {
+        "asia": "Suunnitelma Jumalan hyväksi",
+        "selite": "Suunnitelma Jumalan hyväksi nähdään usein positiivisena, koska se tähtää hengellisiin ja moraalisesti hyviin tarkoituksiin, kuten rakkauteen, oikeudenmukaisuuteen ja hyvyyteen.",
+        "luokitus": 1
+    }
+]
