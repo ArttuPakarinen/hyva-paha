@@ -3,16 +3,44 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dark Themed Text Box with Send Button</title>
+  <title>Asia Filter</title>
   <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
-
   <div class="container">
-    <div id="response"></div>
+    <div>
+      <h1>Filters</h1>
+      
+      <form id="filterForm">
+        <label for="page">Page Number:</label>
+        <input type="number" id="page" name="page" value="1">
+  
+        <h3>Filters</h3>
+        <label for="id">ID:</label>
+        <input type="number" id="id" name="id">
+  
+        <label for="asia">Asia:</label>
+        <input type="text" id="asia" name="asia">
+  
+        <label for="selite">Selite:</label>
+        <input type="text" id="selite" name="selite">
+  
+        <label for="luokitus">Luokitus:</label>
+        <input type="number" id="luokitus" name="luokitus">
+  
+        <label for="createdAt">Created At:</label>
+        <input type="datetime-local" id="createdAt" name="createdAt">
+  
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+    <div>
+      <pre id="response"></pre>
+    </div>
+  </div>
 
-    <script type="module">
-      import { exampleData } from './exampledata.js';
+  <script type="module">
+      // import { exampleData } from './exampledata';
       function getBackgroundColor(luokitus) {
         if (luokitus === 0) {
           return 'hsl(0, 0%, 50%)'; // Gray for luokitus = 0
@@ -44,18 +72,31 @@
 
       // Luo asynkroninen funktio, joka suorittaa GET-pyynnön sivun latautuessa
       async function fetchData() {
+        console.log("event.preventDefault()",event.preventDefault());
+        const page = document.getElementById('page').value;
+        const filters = {
+          id: document.getElementById('id')?.value ? document.getElementById('id').value : undefined,
+          asia: document.getElementById('asia')?.value ? document.getElementById('asia').value : undefined,
+          selite: document.getElementById('selite')?.value ? document.getElementById('selite').value : undefined,
+          luokitus: document.getElementById('luokitus')?.value ? document.getElementById('luokitus').value : undefined,
+          createdAt: document.getElementById('createdAt')?.value ? document.getElementById('createdAt').value : undefined,
+        };
+
         try {
-          const response = await fetch('/api/asiat', {
+          const query = new URLSearchParams({ page, filters: JSON.stringify(filters) }).toString();
+          const response = await fetch(`/api/asiat?${query}`, {
             method: 'GET',
             headers: {
-              'Content-Type': 'application/json'
+              'Content-Type': 'application/json',
             }
           });
-          let data = await response.json();
+          // console.log("response.json()",await response.json())
+          const resp = await response.json();
+          const data = resp.data;
 
-          exampleData.forEach(item => {
-            data.unshift(item);
-        });
+          // exampleData.forEach(item => {
+          //   data.unshift(item);
+          // });
 
           // Get the response container
           const responseContainer = document.getElementById('response');
@@ -63,6 +104,7 @@
           // Clear any existing content
           responseContainer.innerHTML = '';
           // Iterate over the JSON data and create divs
+          console.log("data",data)
           data.forEach(item => {
             // Create a div for each object
             const itemDiv = document.createElement('div');
@@ -81,7 +123,7 @@
             // idDiv.textContent = `ID: ${item.id}`;
 
             const asiaDiv = document.createElement('div');
-            asiaDiv.textContent = `<h2>${item.asia}</h2>`;
+            asiaDiv.innerHTML = `<h2>${item.asia}</h2>`;
 
             const seliteDiv = document.createElement('div');
             seliteDiv.textContent = `${item.selite}`;
@@ -103,10 +145,12 @@
         }
       }
 
-      // Kutsutaan funktiota, kun sivu ladataan
-      window.onload = fetchData;
-    </script>
-  </div>
-
+    document.getElementById('filterForm').addEventListener('submit', async function(event) {
+      event.preventDefault();
+      fetchData();
+      console.log("filterForm",event)
+    });
+  </script>
 </body>
 </html>
+

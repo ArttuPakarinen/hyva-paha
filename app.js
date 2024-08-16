@@ -1,7 +1,7 @@
 const { sendPrompt } = require('./openai');
 const { SELITE_MAX_LENGTH } = require('./appConfig.js');
 const express = require('express');
-const { Sequelize, DataTypes } = require('sequelize');
+const { Sequelize, DataTypes, Op } = require('sequelize');
 
 // Luo Express-sovellus
 const app = express();
@@ -126,13 +126,45 @@ app.post('/api/asiat', async (req, res) => {
 
 // Hae kaikki "Asiat"
 app.get('/api/asiat', async (req, res) => {
-  try {
-    const asiat = await Asiat.findAll();
-    res.json(asiat);
-  } catch (error) {
-    res.status(500).json({ error: error.message });
-  }
-});
+    try {
+      const { page = 1, pageSize = 10, filters } = req.query;
+      const { id, asia, selite, luokitus, createdAt } = JSON.parse(filters);
+      let where = {};
+      
+      // Add filters based on query parameters
+      if (id) where.id = id;
+      if (asia) where.asia = { [Op.like]: `%${asia}%` }; // Partial match using LIKE
+      if (selite) where.selite = { [Op.like]: `%${selite}%` };
+      if (luokitus) where.luokitus = luokitus;
+      if (createdAt) where.createdAt = { [Op.gte]: new Date(createdAt) }; // Date filtering
+  
+      // Calculate pagination values
+      const limit = parseInt(pageSize);  // Number of records per page
+      const offset = (parseInt(page) - 1) * limit;  // Calculate the offset
+  
+      // Query the database with filters and pagination
+      const queryOptions = {
+        where,
+        limit,
+        offset
+      };
+    //   console.log("queryOptions",queryOptions)
+      const { rows, count } = await Asiat.findAndCountAll(queryOptions);
+  
+      // Return the paginated data
+      res.json({
+        page: parseInt(page),
+        pageSize: limit,
+        totalRecords: count,
+        totalPages: Math.ceil(count / limit),
+        data: rows
+      });
+  
+    } catch (error) {
+        console.log("ERROR GET ASIAT",error)
+      res.status(500).json({ error: error.message });
+    }
+  });
 
 // Hae yksittäinen "Asia" ID:llä
 app.get('/api/asiat/:id', async (req, res) => {
