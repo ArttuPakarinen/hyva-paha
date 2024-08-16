@@ -3,32 +3,77 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Asiat sivu</title>
+  <title>Dark Themed Text Box with Send Button</title>
+  <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
-  <h1>asiaa</h1>
-  <div id="response"></div>
 
-  <script>
-    // Luo asynkroninen funktio, joka suorittaa GET-pyynnön sivun latautuessa
-    async function fetchData() {
-      try {
-        const response = await fetch('/api/asiat', {
-          method: 'GET',
-          headers: {
-            'Content-Type': 'application/json'
-          }
-        });
-        
-        const data = await response.json();
-        document.getElementById('response').textContent = JSON.stringify(data, null, 2);
-      } catch (error) {
-        document.getElementById('response').textContent = 'Virhe haussa: ' + error;
+  <div class="container">
+    <div id="response"></div>
+
+    <script>
+      function getBackgroundColor(luokitus) {
+        // Map the luokitus to a hue value:
+        // -1 = 0 (red), 0 = 40 (gray), 1 = 220 (blue)
+        const hue = (luokitus + 1) * 110; // Maps from -1 to 1 -> 0 to 220
+        return `hsl(${hue}, 80%, 50%)`; // Adjust saturation and lightness as needed
       }
-    }
 
-    // Kutsutaan funktiota, kun sivu ladataan
-    window.onload = fetchData;
-  </script>
+      // Luo asynkroninen funktio, joka suorittaa GET-pyynnön sivun latautuessa
+      async function fetchData() {
+        try {
+          const response = await fetch('/api/asiat', {
+            method: 'GET',
+            headers: {
+              'Content-Type': 'application/json'
+            }
+          });
+          const data = await response.json();
+          
+          // Get the response container
+          const responseContainer = document.getElementById('response');
+
+          // Clear any existing content
+          responseContainer.innerHTML = '';
+          // Iterate over the JSON data and create divs
+          data.forEach(item => {
+            // Create a div for each object
+            const itemDiv = document.createElement('div');
+            itemDiv.classList.add('item-div');
+
+            itemDiv.style.backgroundColor = getBackgroundColor(item.luokitus);
+
+            // Create individual elements for each key-value pair
+            const idDiv = document.createElement('div');
+            idDiv.textContent = `ID: ${item.id}`;
+
+            const asiaDiv = document.createElement('div');
+            asiaDiv.textContent = `<h2>${item.asia}</h2>`;
+
+            const seliteDiv = document.createElement('div');
+            seliteDiv.textContent = `${item.selite}`;
+
+            const luokitusDiv = document.createElement('div');
+            luokitusDiv.textContent = `Luokitus: ${item.luokitus}`;
+
+            // Append these elements to the itemDiv
+            itemDiv.appendChild(idDiv);
+            itemDiv.appendChild(asiaDiv);
+            itemDiv.appendChild(seliteDiv);
+            itemDiv.appendChild(luokitusDiv);
+
+            // Append the itemDiv to the response container
+            responseContainer.appendChild(itemDiv);
+          });
+        } catch (error) {
+          document.getElementById('response').textContent = 'Virhe haussa: ' + error;
+        }
+      }
+
+      // Kutsutaan funktiota, kun sivu ladataan
+      window.onload = fetchData;
+    </script>
+  </div>
+
 </body>
 </html>

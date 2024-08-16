@@ -2,52 +2,52 @@
     {
         "asia": "lapsen raiskaus",
         "selite": "Lapsen raiskaus on äärimmäisen paha teko. Se aiheuttaa syvää kärsimystä, vahingoittaa viattomuutta ja rikkoo moraalisia periaatteita.",
-        "luokitus": 1    
+        "luokitus": -1    
     },
     {
         "asia": "naisen raiskaus",
         "selite": "Naisen raiskaus on vakava ja julma rikos, joka loukkaa ihmisen oikeuksia ja aiheuttaa syvää henkistä ja fyysistä kärsimystä.",
-        "luokitus": 1
+        "luokitus": -1
     },
     {
         "asia": "miehen lyöminen",
         "selite": "Miehen lyöminen, ilman oikeutusta kuten itsepuolustusta, on väkivaltainen teko, joka aiheuttaa vahinkoa ja on moraalisesti väärin.",
-        "luokitus": 1
+        "luokitus": -1
     },
     {
         "asia": "sotaan määräminen",
         "selite": "Sotaan määräminen on monimutkainen asia. Se voi liittyä itsepuolustukseen tai aggressioon, mutta se aiheuttaa usein valtavaa kärsimystä ja tuhoa.",
-        "luokitus": 1
+        "luokitus": -1
     },
     {
         "asia": "varkaus",
         "selite": "Varkaus on teko, jossa otetaan toisen omaisuutta ilman lupaa. Se loukkaa toisen oikeuksia ja on moraalisesti väärin.",
-        "luokitus": 1
+        "luokitus": -1
     },
     {
         "asia": "murha",
         "selite": "Murha on tarkoituksellinen toisen ihmisen hengen riistäminen ja on yksi vakavimmista rikoksista ja moraalisista väärinkäytöksistä.",
-        "luokitus": 1
+        "luokitus": -1
     },
     {
         "asia": "lapsen lyöminen",
         "selite": "Lapsen lyöminen on väkivaltainen teko, joka vahingoittaa lasta fyysisesti ja henkisesti. Se on moraalisesti väärin.",
-        "luokitus": 1
+        "luokitus": -1
     },
     {
         "asia": "lapsen vahingoittaminen",
         "selite": "Lapsen vahingoittaminen on äärimmäisen väärin, sillä se aiheuttaa syvää fyysistä ja henkistä kärsimystä haavoittuvaiselle ja viattomalle olennolle.",
-        "luokitus": 1
+        "luokitus": -1
     },
     {
         "asia": "vamman aiheuttaminen",
         "selite": "Vamman aiheuttaminen toiselle, varsinkin tahallisesti, on vahingollinen ja moraalisesti väärä teko, joka loukkaa toisen terveyttä ja hyvinvointia.",
-        "luokitus": 1
+        "luokitus": -1
     },
     {
         "asia": "orjien kaappaaminen",
         "selite": "Orjien kaappaaminen on vakava rikos ihmisyyttä vastaan, loukaten ihmisoikeuksia ja vapautta. Se on äärimmäisen väärin ja moraalisesti tuomittavaa.",
-        "luokitus": 1
+        "luokitus": -1
     },
     {
         "asia": "suru maailman saastasta",
@@ -87,7 +87,7 @@
     {
         "asia": "Kaverin tönäisy hiekkalaatikolla.",
         "selite": "Kaverin tönäisy hiekkalaatikolla voi olla vahingollinen teko, jos se aiheuttaa harmia tai loukkaa toista, vaikka se tapahtuisi leikissä.",
-        "luokitus": 1
+        "luokitus": -1
     },
     {
         "asia": "Autolla ajo",
@@ -97,7 +97,7 @@
     {
         "asia": "Kolarin ajo",
         "selite": "Kolarin ajo on vaarallinen ja vahingollinen teko, joka voi aiheuttaa loukkaantumisia ja omaisuusvahinkoja.",
-        "luokitus": 1
+        "luokitus": -1
     },
     {
         "asia": "Vahinko",
@@ -117,7 +117,7 @@
     {
         "asia": "Tahallinen aineellinen vahinko.",
         "selite": "Tahallinen aineellinen vahinko on vahingonteko, joka aiheuttaa haittaa ja osoittaa piittaamattomuutta toisen omaisuutta kohtaan. Se on moraalisesti väärin.",
-        "luokitus": 1
+        "luokitus": -1
     },
     {
         "asia": "Tauti",
@@ -142,12 +142,12 @@
     {
         "asia": "Valhe",
         "selite": "Valhe on harhaanjohtava teko, joka rikkoo luottamusta ja voi aiheuttaa vahinkoa.",
-        "luokitus": 1
+        "luokitus": -1
     },
     {
         "asia": "Rikos",
         "selite": "Rikos on teko, joka rikkoo lakia ja usein vahingoittaa muita ihmisiä tai yhteiskuntaa.",
-        "luokitus": 1
+        "luokitus": -1
     },
     {
         "asia": "Porno",
@@ -157,12 +157,12 @@
     {
         "asia": "Lapsi näkee pornoa",
         "selite": "Lapsen altistuminen pornolle on vahingollista ja sopimatonta, sillä se voi vaikuttaa haitallisesti lapsen kehitykseen ja ymmärrykseen seksuaalisuudesta.",
-        "luokitus": 1
+        "luokitus": -1
     },
     {
         "asia": "Julkisesti näkyvä seksi",
         "selite": "Julkisesti näkyvä seksi on yleensä sopimatonta ja voi aiheuttaa epämukavuutta tai häiriötä muille. Se rikkoo yleisesti hyväksyttyjä sosiaalisia normeja.",
-        "luokitus": 1
+        "luokitus": -1
     },
     {
         "asia": "Yksityinen seksi",

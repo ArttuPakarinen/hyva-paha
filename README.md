@@ -3,9 +3,12 @@ npm install
 node app.js
 
 # DB
-sqlite3 asiat.sqlite
-## see tables
-    .tables
+## SEED
+    npx sequelize-cli db:seed:all
+## GO TO DB
+    sqlite3 asiat.sqlite
+### see tables
+        .tables
 
 
 # Browser

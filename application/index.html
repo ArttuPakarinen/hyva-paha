@@ -3,36 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Asia Formi</title>
+  <title>Dark Themed Text Box with Send Button</title>
+  <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
-  <h1>Anna asia</h1>
-  <form id="asiaForm">
-    <input type="text" id="asia" placeholder="Kirjoita asia..." required>
-    <button type="submit">Lähetä</button>
-  </form>
-  <div id="response"></div>
 
-  <script>
-    document.getElementById('asiaForm').addEventListener('submit', async function(event) {
-      event.preventDefault();
-      const asia = document.getElementById('asia').value;
+  <div class="container">
+    <textarea class="text-box" placeholder="Enter your text here..."></textarea>
+    <br>
+    <button class="send-button">&#x27A4;</button> <!-- Send arrow symbol -->
+  </div>
 
-      try {
-        const response = await fetch('/api/asiat', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify({ asia })
-        });
-        
-        const data = await response.json();
-        document.getElementById('response').textContent = JSON.stringify(data, null, 2);
-      } catch (error) {
-        document.getElementById('response').textContent = 'Virhe lähetyksessä: ' + error;
-      }
-    });
-  </script>
 </body>
 </html>

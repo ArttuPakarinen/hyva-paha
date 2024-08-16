@@ -1,0 +1,71 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #121212; /* Dark background */
+    font-family: Arial, sans-serif;
+  }
+
+  .container {
+    text-align: center;
+    color: white;
+    margin: auto;
+    width: 70%;
+  }
+
+  .text-box {
+    width: 300px;
+    height: 100px;
+    background-color: #1e1e1e; /* Darker background for text box */
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 16px;
+    outline: none;
+    resize: none;
+  }
+
+  .send-button {
+    display: inline-block;
+    margin-top: 20px;
+    width: 60px;
+    height: 60px;
+    background-color: #ff5722; /* Bright color for send button */
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .send-button:hover {
+    background-color: #e64a19; /* Darker shade on hover */
+  }
+
+  #response {
+    margin-top: 20px;
+  }
+  
+  .item-div {
+    background-color: #1e1e1e; /* Dark background for the div */
+    color: white;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+  }
+  
+  .item-div div {
+    margin-bottom: 8px;
+  }
+  

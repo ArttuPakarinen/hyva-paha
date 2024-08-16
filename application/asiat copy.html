@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Asiat sivu</title>
+</head>
+<body>
+  <h1>asiaa</h1>
+  <div id="response"></div>
+
+  <script>
+    // Luo asynkroninen funktio, joka suorittaa GET-pyynnön sivun latautuessa
+    async function fetchData() {
+      try {
+        const response = await fetch('/api/asiat', {
+          method: 'GET',
+          headers: {
+            'Content-Type': 'application/json'
+          }
+        });
+        
+        const data = await response.json();
+        document.getElementById('response').textContent = JSON.stringify(data, null, 2);
+      } catch (error) {
+        document.getElementById('response').textContent = 'Virhe haussa: ' + error;
+      }
+    }
+
+    // Kutsutaan funktiota, kun sivu ladataan
+    window.onload = fetchData;
+  </script>
+</body>
+</html>
