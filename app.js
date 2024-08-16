@@ -20,6 +20,10 @@ app.get('/styles.css', (req, res) => {
     res.sendFile(path.join(__dirname, 'application/styles.css'));
 });
 
+app.get('/exampleData.js', (req, res) => {
+    res.sendFile(path.join(__dirname, 'application/exampleData.js'));
+});
+
 app.get('/asiat', (req, res) => {
     res.sendFile(path.join(__dirname, 'application/asiat.html'));
 });

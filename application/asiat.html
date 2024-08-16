@@ -11,12 +11,27 @@
   <div class="container">
     <div id="response"></div>
 
-    <script>
+    <script type="module">
+      import { exampleData } from './exampledata.js';
       function getBackgroundColor(luokitus) {
+        if (luokitus === 0) {
+          return 'hsl(0, 0%, 50%)'; // Gray for luokitus = 0
+        } else if (luokitus > 0) {
+          // Interpolate between gray (0%) and blue (220deg hue)
+          const hue = 220; // Blue hue
+          const saturation = 100 * luokitus; // Higher luokitus = more saturated blue
+          return `hsl(${hue}, ${saturation}%, 50%)`;
+        } else {
+          // Interpolate between gray (0%) and red (0deg hue)
+          const hue = 0; // Red hue
+          const saturation = 100 * -luokitus; // Higher negative luokitus = more saturated red
+          return `hsl(${hue}, ${saturation}%, 50%)`;
+        }
+    
         // Map the luokitus to a hue value:
-        // -1 = 0 (red), 0 = 40 (gray), 1 = 220 (blue)
-        const hue = (luokitus + 1) * 110; // Maps from -1 to 1 -> 0 to 220
-        return `hsl(${hue}, 80%, 50%)`; // Adjust saturation and lightness as needed
+        // // -1 = 0 (red), 0 = 40 (gray), 1 = 220 (blue)
+        // const hue = (luokitus + 1) * 110; // Maps from -1 to 1 -> 0 to 220
+        // return `hsl(${hue}, 80%, 50%)`; // Adjust saturation and lightness as needed
       }
 
       // Luo asynkroninen funktio, joka suorittaa GET-pyynnön sivun latautuessa
@@ -28,8 +43,12 @@
               'Content-Type': 'application/json'
             }
           });
-          const data = await response.json();
-          
+          let data = await response.json();
+
+          exampleData.forEach(item => {
+            data.unshift(item);
+        });
+
           // Get the response container
           const responseContainer = document.getElementById('response');
 
@@ -43,9 +62,9 @@
 
             itemDiv.style.backgroundColor = getBackgroundColor(item.luokitus);
 
-            // Create individual elements for each key-value pair
+            // // Create individual elements for each key-value pair
             const idDiv = document.createElement('div');
-            idDiv.textContent = `ID: ${item.id}`;
+            // idDiv.textContent = `ID: ${item.id}`;
 
             const asiaDiv = document.createElement('div');
             asiaDiv.textContent = `<h2>${item.asia}</h2>`;
